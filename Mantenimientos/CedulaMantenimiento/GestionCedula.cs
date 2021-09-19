@@ -14,7 +14,7 @@ namespace DS1.Mantenimientos.CedulaMantenimiento
     public partial class GestionCedula : Form
     {
         CedulaEntities Entities = new CedulaEntities();
-        CedulaForm cdform = new CedulaForm();
+        List<string> msg = new List<string>();
         public int? cedulaToEditId;
         public GestionCedula()
         {
@@ -31,8 +31,6 @@ namespace DS1.Mantenimientos.CedulaMantenimiento
             var cbOcupacionData = Entities.Ocupacions.Where(n => n.Estado == (int)EstadosEnum.Activo).Select(n => new { id = n.Id, text = n.Descripcion }).ToList();
             var cbEstadoCivilData = Entities.EstadoCivils.Where(n => n.Estado == (int)EstadosEnum.Activo).Select(n => new { id = n.Id, text = n.Descripcion }).ToList();
             var cbMunicipioData = Entities.Municipios.Where(n => n.Estado == (int)EstadosEnum.Activo).Select(n => new { id = n.Id, text = n.Descripcion }).ToList();
-            var cbSectorData = Entities.Sectors.Where(n => n.Estado == (int)EstadosEnum.Activo).Select(n => new { id = n.Id, text = n.Descripcion }).ToList();
-            var cbColegioData = Entities.Colegios.Where(n => n.Estado == (int)EstadosEnum.Activo).Select(n => new { id = n.Id, text = n.Nombre }).ToList();
 
             cbNacionalidadData.ForEach(data =>
             cbNacionalidad.Items.Insert(data.id, data.text)
@@ -55,9 +53,15 @@ namespace DS1.Mantenimientos.CedulaMantenimiento
             cbMunicipioData.ForEach(data =>
             cbMunicipio.Items.Insert(data.id, data.text)
             );
+
+            var cbSectorData = Entities.Sectors.Where(n => n.Estado == (int)EstadosEnum.Activo && n.IdMunicipio == cbMunicipio.SelectedIndex).Select(n => new { id = n.Id, text = n.Descripcion }).ToList();
+            //necesita sacarlo de municipio 
             cbSectorData.ForEach(data =>
             cbSector.Items.Insert(data.id, data.text)
             );
+
+            var cbColegioData = Entities.Colegios.Where(n => n.Estado == (int)EstadosEnum.Activo && n.IdMunicipio == cbMunicipio.SelectedIndex && n.IdSector == cbSector.SelectedIndex).Select(n => new { id = n.Id, text = n.Nombre }).ToList();
+            //necesita sacarlo de municipio y sector
             cbColegioData.ForEach(data =>
             cbColegio.Items.Insert(data.id, data.text)
             );
@@ -137,7 +141,12 @@ namespace DS1.Mantenimientos.CedulaMantenimiento
         void Save()
         {
             var NewCedula = GetObject();
-            Entities.Cedulas.Add(NewCedula);
+            var Existe = Entities.Cedulas.Any(c => c.Nombre == NewCedula.Nombre && c.Apellido == NewCedula.Apellido);
+            if (!Existe) Entities.Cedulas.Add(NewCedula);
+            else
+            {
+                
+            }
             bool result = Entities.SaveChanges() > 0;
 
             if (result)
@@ -145,18 +154,104 @@ namespace DS1.Mantenimientos.CedulaMantenimiento
                 this.Close();
             }
         }
+        bool ValidandoDatos()
+        {
+            msg = new List<string>();
+            bool result = true;
+
+            if (string.IsNullOrEmpty(tbNombre.Text))
+            {
+                msg.Add("El campo Nombre es Requerido.");
+                result = false;
+            }
+            if (string.IsNullOrEmpty(tbApellido.Text))
+            {
+                msg.Add("El campo Apellido es Requerido.");
+                result = false;
+            }
+            if (string.IsNullOrEmpty(tbApellido.Text))
+            {
+                msg.Add("El campo Apellido es Requerido.");
+                result = false;
+            }
+            if (string.IsNullOrEmpty(tbDireccionResidencia.Text))
+            {
+                msg.Add("El campo Direccion Residencia es Requerido.");
+                result = false;
+            }
+            if (string.IsNullOrEmpty(cbNacionalidad.Text))
+            {
+                msg.Add("El campo Nacionalidad es Requerido.");
+                result = false;
+            }
+            if (string.IsNullOrEmpty(cbLugarNacimiento.Text))
+            {
+                msg.Add("El campo Lugar Nacimiento es Requerido.");
+                result = false;
+            }
+            if (string.IsNullOrEmpty(cbSexo.Text))
+            {
+                msg.Add("El campo Sexo es Requerido.");
+                result = false;
+            }
+            if (string.IsNullOrEmpty(cbTipoSangre.Text))
+            {
+                msg.Add("El campo Tipo de Sangre es Requerido.");
+                result = false;
+            }
+            if (string.IsNullOrEmpty(cbOcupacion.Text))
+            {
+                msg.Add("El campo Ocupacion es Requerido.");
+                result = false;
+            }
+            if (string.IsNullOrEmpty(cbEstadoCivil.Text))
+            {
+                msg.Add("El campo Estado Civil es Requerido.");
+                result = false;
+            }
+            if (string.IsNullOrEmpty(cbMunicipio.Text))
+            {
+                msg.Add("El campo Municipio es Requerido.");
+                result = false;
+            }
+            if (string.IsNullOrEmpty(cbSector.Text))
+            {
+                msg.Add("El campo Sector es Requerido.");
+                result = false;
+            }
+            if (string.IsNullOrEmpty(cbColegio.Text))
+            {
+                msg.Add("El campo Colegio es Requerido.");
+                result = false;
+            }
+
+            return result;
+        }
         private void addButton_Click(object sender, EventArgs e)
         {
             var rnd = new Random();
             try
             {
-                if (cedulaToEditId!=null)
+                if (ValidandoDatos())
                 {
-                    update();
+                    if (cedulaToEditId != null)
+                    {
+                        update();
+                    }
+                    else
+                    {
+                        Save();
+                    }
                 }
                 else
                 {
-                    Save();
+                    var list = string.Empty;
+                    foreach (var item in msg)
+                    {
+                        list += item + "\n";
+                    }
+
+                    MessageBox.Show(list, "INTEC");
                 }
             }
             catch (Exception err)
@@ -167,6 +262,16 @@ namespace DS1.Mantenimientos.CedulaMantenimiento
         private void CancelButton_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void cbMunicipio_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            LoadComboBox();
+        }
+
+        private void cbSector_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            LoadComboBox();
         }
     }
 }
