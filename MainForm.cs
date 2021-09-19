@@ -66,5 +66,11 @@ namespace DS1
         {
             this.LayoutMdi(MdiLayout.ArrangeIcons);
         }
+
+        private void crearToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var CedulaForm = new CedulaForm() { MdiParent = this };
+            CedulaForm.Show();
+        }
     }
 }

@@ -1,0 +1,735 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="CedulaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Cedula">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Codigo" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Apellido" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="FechaNacimiento" Type="datetime" Nullable="false" />
+          <Property Name="FechaExpiracion" Type="datetime" />
+          <Property Name="DireccionResidencia" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="IdColegioElectoral" Type="int" Nullable="false" />
+          <Property Name="IdNacional" Type="int" Nullable="false" />
+          <Property Name="IdLugarNacimiento" Type="int" Nullable="false" />
+          <Property Name="IdSexo" Type="int" Nullable="false" />
+          <Property Name="IdTipoSangre" Type="int" Nullable="false" />
+          <Property Name="IdOcupacion" Type="int" Nullable="false" />
+          <Property Name="IdEstadoCivil" Type="int" Nullable="false" />
+          <Property Name="IdMunicipio" Type="int" Nullable="false" />
+          <Property Name="IdSector" Type="int" Nullable="false" />
+          <Property Name="Estado" Type="int" Nullable="false" />
+          <Property Name="FechaCreacion" Type="datetime" Nullable="false" />
+          <Property Name="FechaModificacion" Type="datetime" />
+          <Property Name="Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Colegio">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Nombre" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Estado" Type="int" Nullable="false" />
+          <Property Name="Direccion" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="IdMunicipio" Type="int" />
+          <Property Name="IdSector" Type="int" />
+          <Property Name="FechaCreacion" Type="datetime" Nullable="false" />
+          <Property Name="FechaModificacion" Type="datetime" />
+          <Property Name="Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EstadoCivil">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Descripcion" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Estado" Type="int" Nullable="false" />
+          <Property Name="FechaCreacion" Type="datetime" Nullable="false" />
+          <Property Name="FechaModificacion" Type="datetime" />
+          <Property Name="Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LugarNacimiento">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Descripcion" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Estado" Type="int" Nullable="false" />
+          <Property Name="FechaCreacion" Type="datetime" Nullable="false" />
+          <Property Name="FechaModificacion" Type="datetime" />
+          <Property Name="Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Municipio">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Descripcion" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Estado" Type="int" Nullable="false" />
+          <Property Name="FechaCreacion" Type="datetime" Nullable="false" />
+          <Property Name="FechaModificacion" Type="datetime" />
+          <Property Name="Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Nacionalidad">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Descripcion" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Estado" Type="int" Nullable="false" />
+          <Property Name="FechaCreacion" Type="datetime" Nullable="false" />
+          <Property Name="FechaModificacion" Type="datetime" />
+          <Property Name="Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Ocupacion">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Descripcion" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Estado" Type="int" Nullable="false" />
+          <Property Name="FechaCreacion" Type="datetime" Nullable="false" />
+          <Property Name="FechaModificacion" Type="datetime" />
+          <Property Name="Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sector">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Descripcion" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Estado" Type="int" Nullable="false" />
+          <Property Name="IdMunicipio" Type="int" Nullable="false" />
+          <Property Name="FechaCreacion" Type="datetime" Nullable="false" />
+          <Property Name="FechaModificacion" Type="datetime" />
+          <Property Name="Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sexo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Estado" Type="int" Nullable="false" />
+          <Property Name="Descripcion" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="FechaCreacion" Type="datetime" Nullable="false" />
+          <Property Name="FechaModificacion" Type="datetime" />
+        </EntityType>
+        <EntityType Name="TipoSangre">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Descripcion" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Estado" Type="int" Nullable="false" />
+          <Property Name="FechaCreacion" Type="datetime" Nullable="false" />
+          <Property Name="FechaModificacion" Type="datetime" />
+          <Property Name="Id" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_CedulaColegio">
+          <End Role="Colegio" Type="Self.Colegio" Multiplicity="1" />
+          <End Role="Cedula" Type="Self.Cedula" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Colegio">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Cedula">
+              <PropertyRef Name="IdColegioElectoral" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CedulaEstadoCivil">
+          <End Role="EstadoCivil" Type="Self.EstadoCivil" Multiplicity="1" />
+          <End Role="Cedula" Type="Self.Cedula" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EstadoCivil">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Cedula">
+              <PropertyRef Name="IdEstadoCivil" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CedulaLugarNacimiento">
+          <End Role="LugarNacimiento" Type="Self.LugarNacimiento" Multiplicity="1" />
+          <End Role="Cedula" Type="Self.Cedula" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LugarNacimiento">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Cedula">
+              <PropertyRef Name="IdLugarNacimiento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CedulaMunicipio">
+          <End Role="Municipio" Type="Self.Municipio" Multiplicity="1" />
+          <End Role="Cedula" Type="Self.Cedula" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Municipio">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Cedula">
+              <PropertyRef Name="IdMunicipio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CedulaNacionalidad">
+          <End Role="Nacionalidad" Type="Self.Nacionalidad" Multiplicity="1" />
+          <End Role="Cedula" Type="Self.Cedula" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Nacionalidad">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Cedula">
+              <PropertyRef Name="IdNacional" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CedulaOcupacion">
+          <End Role="Ocupacion" Type="Self.Ocupacion" Multiplicity="1" />
+          <End Role="Cedula" Type="Self.Cedula" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ocupacion">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Cedula">
+              <PropertyRef Name="IdOcupacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CedulaSector">
+          <End Role="Sector" Type="Self.Sector" Multiplicity="1" />
+          <End Role="Cedula" Type="Self.Cedula" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sector">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Cedula">
+              <PropertyRef Name="IdSector" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CedulaSexo">
+          <End Role="Sexo" Type="Self.Sexo" Multiplicity="1" />
+          <End Role="Cedula" Type="Self.Cedula" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sexo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Cedula">
+              <PropertyRef Name="IdSexo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CedulaTipoSangre">
+          <End Role="TipoSangre" Type="Self.TipoSangre" Multiplicity="1" />
+          <End Role="Cedula" Type="Self.Cedula" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoSangre">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Cedula">
+              <PropertyRef Name="IdTipoSangre" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CedulaModelStoreContainer">
+          <EntitySet Name="Cedula" EntityType="Self.Cedula" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Colegio" EntityType="Self.Colegio" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EstadoCivil" EntityType="Self.EstadoCivil" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LugarNacimiento" EntityType="Self.LugarNacimiento" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Municipio" EntityType="Self.Municipio" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Nacionalidad" EntityType="Self.Nacionalidad" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ocupacion" EntityType="Self.Ocupacion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sector" EntityType="Self.Sector" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sexo" EntityType="Self.Sexo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TipoSangre" EntityType="Self.TipoSangre" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_CedulaColegio" Association="Self.FK_CedulaColegio">
+            <End Role="Colegio" EntitySet="Colegio" />
+            <End Role="Cedula" EntitySet="Cedula" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CedulaEstadoCivil" Association="Self.FK_CedulaEstadoCivil">
+            <End Role="EstadoCivil" EntitySet="EstadoCivil" />
+            <End Role="Cedula" EntitySet="Cedula" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CedulaLugarNacimiento" Association="Self.FK_CedulaLugarNacimiento">
+            <End Role="LugarNacimiento" EntitySet="LugarNacimiento" />
+            <End Role="Cedula" EntitySet="Cedula" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CedulaMunicipio" Association="Self.FK_CedulaMunicipio">
+            <End Role="Municipio" EntitySet="Municipio" />
+            <End Role="Cedula" EntitySet="Cedula" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CedulaNacionalidad" Association="Self.FK_CedulaNacionalidad">
+            <End Role="Nacionalidad" EntitySet="Nacionalidad" />
+            <End Role="Cedula" EntitySet="Cedula" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CedulaOcupacion" Association="Self.FK_CedulaOcupacion">
+            <End Role="Ocupacion" EntitySet="Ocupacion" />
+            <End Role="Cedula" EntitySet="Cedula" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CedulaSector" Association="Self.FK_CedulaSector">
+            <End Role="Sector" EntitySet="Sector" />
+            <End Role="Cedula" EntitySet="Cedula" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CedulaSexo" Association="Self.FK_CedulaSexo">
+            <End Role="Sexo" EntitySet="Sexo" />
+            <End Role="Cedula" EntitySet="Cedula" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CedulaTipoSangre" Association="Self.FK_CedulaTipoSangre">
+            <End Role="TipoSangre" EntitySet="TipoSangre" />
+            <End Role="Cedula" EntitySet="Cedula" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CedulaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Colegio">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Nombre" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Estado" Type="Int32" Nullable="false" />
+          <Property Name="Direccion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IdMunicipio" Type="Int32" />
+          <Property Name="IdSector" Type="Int32" />
+          <Property Name="FechaCreacion" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FechaModificacion" Type="DateTime" Precision="3" />
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Cedulas" Relationship="Self.FK_CedulaColegio" FromRole="Colegio" ToRole="Cedula" />
+        </EntityType>
+        <EntityType Name="EstadoCivil">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Estado" Type="Int32" Nullable="false" />
+          <Property Name="FechaCreacion" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FechaModificacion" Type="DateTime" Precision="3" />
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Cedulas" Relationship="Self.FK_CedulaEstadoCivil" FromRole="EstadoCivil" ToRole="Cedula" />
+        </EntityType>
+        <EntityType Name="LugarNacimiento">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Estado" Type="Int32" Nullable="false" />
+          <Property Name="FechaCreacion" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FechaModificacion" Type="DateTime" Precision="3" />
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Cedulas" Relationship="Self.FK_CedulaLugarNacimiento" FromRole="LugarNacimiento" ToRole="Cedula" />
+        </EntityType>
+        <EntityType Name="Municipio">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Estado" Type="Int32" Nullable="false" />
+          <Property Name="FechaCreacion" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FechaModificacion" Type="DateTime" Precision="3" />
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Cedulas" Relationship="Self.FK_CedulaMunicipio" FromRole="Municipio" ToRole="Cedula" />
+        </EntityType>
+        <EntityType Name="Nacionalidad">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Estado" Type="Int32" Nullable="false" />
+          <Property Name="FechaCreacion" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FechaModificacion" Type="DateTime" Precision="3" />
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Cedulas" Relationship="Self.FK_CedulaNacionalidad" FromRole="Nacionalidad" ToRole="Cedula" />
+        </EntityType>
+        <EntityType Name="Ocupacion">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Estado" Type="Int32" Nullable="false" />
+          <Property Name="FechaCreacion" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FechaModificacion" Type="DateTime" Precision="3" />
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Cedulas" Relationship="Self.FK_CedulaOcupacion" FromRole="Ocupacion" ToRole="Cedula" />
+        </EntityType>
+        <EntityType Name="Sector">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Estado" Type="Int32" Nullable="false" />
+          <Property Name="IdMunicipio" Type="Int32" Nullable="false" />
+          <Property Name="FechaCreacion" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FechaModificacion" Type="DateTime" Precision="3" />
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Cedulas" Relationship="Self.FK_CedulaSector" FromRole="Sector" ToRole="Cedula" />
+        </EntityType>
+        <EntityType Name="Sexo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Estado" Type="Int32" Nullable="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FechaCreacion" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FechaModificacion" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Cedulas" Relationship="Self.FK_CedulaSexo" FromRole="Sexo" ToRole="Cedula" />
+        </EntityType>
+        <EntityType Name="TipoSangre">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Estado" Type="Int32" Nullable="false" />
+          <Property Name="FechaCreacion" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FechaModificacion" Type="DateTime" Precision="3" />
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Cedulas" Relationship="Self.FK_CedulaTipoSangre" FromRole="TipoSangre" ToRole="Cedula" />
+        </EntityType>
+        <EntityType Name="Cedula">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Codigo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Apellido" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FechaNacimiento" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FechaExpiracion" Type="DateTime" Precision="3" />
+          <Property Name="DireccionResidencia" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IdColegioElectoral" Type="Int32" Nullable="false" />
+          <Property Name="IdNacional" Type="Int32" Nullable="false" />
+          <Property Name="IdLugarNacimiento" Type="Int32" Nullable="false" />
+          <Property Name="IdSexo" Type="Int32" Nullable="false" />
+          <Property Name="IdTipoSangre" Type="Int32" Nullable="false" />
+          <Property Name="IdOcupacion" Type="Int32" Nullable="false" />
+          <Property Name="IdEstadoCivil" Type="Int32" Nullable="false" />
+          <Property Name="IdMunicipio" Type="Int32" Nullable="false" />
+          <Property Name="IdSector" Type="Int32" Nullable="false" />
+          <Property Name="Estado" Type="Int32" Nullable="false" />
+          <Property Name="FechaCreacion" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FechaModificacion" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Colegio" Relationship="Self.FK_CedulaColegio" FromRole="Cedula" ToRole="Colegio" />
+          <NavigationProperty Name="EstadoCivil" Relationship="Self.FK_CedulaEstadoCivil" FromRole="Cedula" ToRole="EstadoCivil" />
+          <NavigationProperty Name="LugarNacimiento" Relationship="Self.FK_CedulaLugarNacimiento" FromRole="Cedula" ToRole="LugarNacimiento" />
+          <NavigationProperty Name="Municipio" Relationship="Self.FK_CedulaMunicipio" FromRole="Cedula" ToRole="Municipio" />
+          <NavigationProperty Name="Nacionalidad" Relationship="Self.FK_CedulaNacionalidad" FromRole="Cedula" ToRole="Nacionalidad" />
+          <NavigationProperty Name="Ocupacion" Relationship="Self.FK_CedulaOcupacion" FromRole="Cedula" ToRole="Ocupacion" />
+          <NavigationProperty Name="Sector" Relationship="Self.FK_CedulaSector" FromRole="Cedula" ToRole="Sector" />
+          <NavigationProperty Name="Sexo" Relationship="Self.FK_CedulaSexo" FromRole="Cedula" ToRole="Sexo" />
+          <NavigationProperty Name="TipoSangre" Relationship="Self.FK_CedulaTipoSangre" FromRole="Cedula" ToRole="TipoSangre" />
+        </EntityType>
+        <Association Name="FK_CedulaColegio">
+          <End Role="Colegio" Type="Self.Colegio" Multiplicity="1" />
+          <End Role="Cedula" Type="Self.Cedula" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Colegio">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Cedula">
+              <PropertyRef Name="IdColegioElectoral" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CedulaEstadoCivil">
+          <End Role="EstadoCivil" Type="Self.EstadoCivil" Multiplicity="1" />
+          <End Role="Cedula" Type="Self.Cedula" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EstadoCivil">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Cedula">
+              <PropertyRef Name="IdEstadoCivil" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CedulaLugarNacimiento">
+          <End Role="LugarNacimiento" Type="Self.LugarNacimiento" Multiplicity="1" />
+          <End Role="Cedula" Type="Self.Cedula" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LugarNacimiento">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Cedula">
+              <PropertyRef Name="IdLugarNacimiento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CedulaMunicipio">
+          <End Role="Municipio" Type="Self.Municipio" Multiplicity="1" />
+          <End Role="Cedula" Type="Self.Cedula" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Municipio">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Cedula">
+              <PropertyRef Name="IdMunicipio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CedulaNacionalidad">
+          <End Role="Nacionalidad" Type="Self.Nacionalidad" Multiplicity="1" />
+          <End Role="Cedula" Type="Self.Cedula" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Nacionalidad">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Cedula">
+              <PropertyRef Name="IdNacional" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CedulaOcupacion">
+          <End Role="Ocupacion" Type="Self.Ocupacion" Multiplicity="1" />
+          <End Role="Cedula" Type="Self.Cedula" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ocupacion">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Cedula">
+              <PropertyRef Name="IdOcupacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CedulaSector">
+          <End Role="Sector" Type="Self.Sector" Multiplicity="1" />
+          <End Role="Cedula" Type="Self.Cedula" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sector">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Cedula">
+              <PropertyRef Name="IdSector" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CedulaSexo">
+          <End Role="Sexo" Type="Self.Sexo" Multiplicity="1" />
+          <End Role="Cedula" Type="Self.Cedula" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sexo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Cedula">
+              <PropertyRef Name="IdSexo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CedulaTipoSangre">
+          <End Role="TipoSangre" Type="Self.TipoSangre" Multiplicity="1" />
+          <End Role="Cedula" Type="Self.Cedula" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoSangre">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Cedula">
+              <PropertyRef Name="IdTipoSangre" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CedulaEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Colegios" EntityType="Self.Colegio" />
+          <EntitySet Name="EstadoCivils" EntityType="Self.EstadoCivil" />
+          <EntitySet Name="LugarNacimientoes" EntityType="Self.LugarNacimiento" />
+          <EntitySet Name="Municipios" EntityType="Self.Municipio" />
+          <EntitySet Name="Nacionalidads" EntityType="Self.Nacionalidad" />
+          <EntitySet Name="Ocupacions" EntityType="Self.Ocupacion" />
+          <EntitySet Name="Sectors" EntityType="Self.Sector" />
+          <EntitySet Name="Sexoes" EntityType="Self.Sexo" />
+          <EntitySet Name="TipoSangres" EntityType="Self.TipoSangre" />
+          <EntitySet Name="Cedulas" EntityType="Self.Cedula" />
+          <AssociationSet Name="FK_CedulaColegio" Association="Self.FK_CedulaColegio">
+            <End Role="Colegio" EntitySet="Colegios" />
+            <End Role="Cedula" EntitySet="Cedulas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CedulaEstadoCivil" Association="Self.FK_CedulaEstadoCivil">
+            <End Role="EstadoCivil" EntitySet="EstadoCivils" />
+            <End Role="Cedula" EntitySet="Cedulas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CedulaLugarNacimiento" Association="Self.FK_CedulaLugarNacimiento">
+            <End Role="LugarNacimiento" EntitySet="LugarNacimientoes" />
+            <End Role="Cedula" EntitySet="Cedulas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CedulaMunicipio" Association="Self.FK_CedulaMunicipio">
+            <End Role="Municipio" EntitySet="Municipios" />
+            <End Role="Cedula" EntitySet="Cedulas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CedulaNacionalidad" Association="Self.FK_CedulaNacionalidad">
+            <End Role="Nacionalidad" EntitySet="Nacionalidads" />
+            <End Role="Cedula" EntitySet="Cedulas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CedulaOcupacion" Association="Self.FK_CedulaOcupacion">
+            <End Role="Ocupacion" EntitySet="Ocupacions" />
+            <End Role="Cedula" EntitySet="Cedulas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CedulaSector" Association="Self.FK_CedulaSector">
+            <End Role="Sector" EntitySet="Sectors" />
+            <End Role="Cedula" EntitySet="Cedulas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CedulaSexo" Association="Self.FK_CedulaSexo">
+            <End Role="Sexo" EntitySet="Sexoes" />
+            <End Role="Cedula" EntitySet="Cedulas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CedulaTipoSangre" Association="Self.FK_CedulaTipoSangre">
+            <End Role="TipoSangre" EntitySet="TipoSangres" />
+            <End Role="Cedula" EntitySet="Cedulas" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CedulaModelStoreContainer" CdmEntityContainer="CedulaEntities">
+          <EntitySetMapping Name="Colegios">
+            <EntityTypeMapping TypeName="CedulaModel.Colegio">
+              <MappingFragment StoreEntitySet="Colegio">
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+                <ScalarProperty Name="IdMunicipio" ColumnName="IdMunicipio" />
+                <ScalarProperty Name="IdSector" ColumnName="IdSector" />
+                <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+                <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EstadoCivils">
+            <EntityTypeMapping TypeName="CedulaModel.EstadoCivil">
+              <MappingFragment StoreEntitySet="EstadoCivil">
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+                <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LugarNacimientoes">
+            <EntityTypeMapping TypeName="CedulaModel.LugarNacimiento">
+              <MappingFragment StoreEntitySet="LugarNacimiento">
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+                <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Municipios">
+            <EntityTypeMapping TypeName="CedulaModel.Municipio">
+              <MappingFragment StoreEntitySet="Municipio">
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+                <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Nacionalidads">
+            <EntityTypeMapping TypeName="CedulaModel.Nacionalidad">
+              <MappingFragment StoreEntitySet="Nacionalidad">
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+                <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ocupacions">
+            <EntityTypeMapping TypeName="CedulaModel.Ocupacion">
+              <MappingFragment StoreEntitySet="Ocupacion">
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+                <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sectors">
+            <EntityTypeMapping TypeName="CedulaModel.Sector">
+              <MappingFragment StoreEntitySet="Sector">
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="IdMunicipio" ColumnName="IdMunicipio" />
+                <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+                <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sexoes">
+            <EntityTypeMapping TypeName="CedulaModel.Sexo">
+              <MappingFragment StoreEntitySet="Sexo">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+                <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TipoSangres">
+            <EntityTypeMapping TypeName="CedulaModel.TipoSangre">
+              <MappingFragment StoreEntitySet="TipoSangre">
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+                <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cedulas">
+            <EntityTypeMapping TypeName="CedulaModel.Cedula">
+              <MappingFragment StoreEntitySet="Cedula">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+                <ScalarProperty Name="FechaNacimiento" ColumnName="FechaNacimiento" />
+                <ScalarProperty Name="FechaExpiracion" ColumnName="FechaExpiracion" />
+                <ScalarProperty Name="DireccionResidencia" ColumnName="DireccionResidencia" />
+                <ScalarProperty Name="IdColegioElectoral" ColumnName="IdColegioElectoral" />
+                <ScalarProperty Name="IdNacional" ColumnName="IdNacional" />
+                <ScalarProperty Name="IdLugarNacimiento" ColumnName="IdLugarNacimiento" />
+                <ScalarProperty Name="IdSexo" ColumnName="IdSexo" />
+                <ScalarProperty Name="IdTipoSangre" ColumnName="IdTipoSangre" />
+                <ScalarProperty Name="IdOcupacion" ColumnName="IdOcupacion" />
+                <ScalarProperty Name="IdEstadoCivil" ColumnName="IdEstadoCivil" />
+                <ScalarProperty Name="IdMunicipio" ColumnName="IdMunicipio" />
+                <ScalarProperty Name="IdSector" ColumnName="IdSector" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+                <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

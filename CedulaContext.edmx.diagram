@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4023db286ab848debaf095261e8e627c" Name="Diagram1" ZoomLevel="94">
+        <EntityTypeShape EntityType="CedulaModel.Colegio" Width="1.5" PointX="0.75" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="CedulaModel.EstadoCivil" Width="1.5" PointX="0.75" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CedulaModel.LugarNacimiento" Width="1.5" PointX="0.75" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CedulaModel.Municipio" Width="1.5" PointX="0.75" PointY="13.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CedulaModel.Nacionalidad" Width="1.5" PointX="0.75" PointY="16" IsExpanded="true" />
+        <EntityTypeShape EntityType="CedulaModel.Ocupacion" Width="1.5" PointX="0.75" PointY="19" IsExpanded="true" />
+        <EntityTypeShape EntityType="CedulaModel.Sector" Width="1.5" PointX="0.75" PointY="21.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CedulaModel.Sexo" Width="1.5" PointX="0.75" PointY="25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CedulaModel.TipoSangre" Width="1.5" PointX="0.75" PointY="27.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CedulaModel.Cedula" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <AssociationConnector Association="CedulaModel.FK_CedulaColegio" ManuallyRouted="false" />
+        <AssociationConnector Association="CedulaModel.FK_CedulaEstadoCivil" ManuallyRouted="false" />
+        <AssociationConnector Association="CedulaModel.FK_CedulaLugarNacimiento" ManuallyRouted="false" />
+        <AssociationConnector Association="CedulaModel.FK_CedulaMunicipio" ManuallyRouted="false" />
+        <AssociationConnector Association="CedulaModel.FK_CedulaNacionalidad" ManuallyRouted="false" />
+        <AssociationConnector Association="CedulaModel.FK_CedulaOcupacion" ManuallyRouted="false" />
+        <AssociationConnector Association="CedulaModel.FK_CedulaSector" ManuallyRouted="false" />
+        <AssociationConnector Association="CedulaModel.FK_CedulaSexo" ManuallyRouted="false" />
+        <AssociationConnector Association="CedulaModel.FK_CedulaTipoSangre" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
