@@ -14,6 +14,7 @@ namespace DS1.Mantenimientos.CedulaMantenimiento
     public partial class AddCedula : Form
     {
         CedulaEntities Entities = new CedulaEntities();
+        CedulaForm cdform = new CedulaForm();
         public AddCedula()
         {
             InitializeComponent();
@@ -92,6 +93,7 @@ namespace DS1.Mantenimientos.CedulaMantenimiento
                 if (result)
                 {
                     this.Close();
+                    cdform.LoadCedulas();
                 }
 
             }
@@ -99,13 +101,11 @@ namespace DS1.Mantenimientos.CedulaMantenimiento
             {
                 Console.WriteLine(err);
             }
-            
-
-
         }
 
         private void CancelButton_Click(object sender, EventArgs e)
         {
+            cdform.LoadCedulas();
             this.Close();
         }
     }
