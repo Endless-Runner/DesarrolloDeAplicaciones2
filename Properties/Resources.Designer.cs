@@ -63,6 +63,26 @@ namespace DS1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap avatar__320x378 {
+            get {
+                object obj = ResourceManager.GetObject("avatar--320x378", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap avatar__320x3781 {
+            get {
+                object obj = ResourceManager.GetObject("avatar--320x3781", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap logo_intec {
             get {
                 object obj = ResourceManager.GetObject("logo_intec", resourceCulture);

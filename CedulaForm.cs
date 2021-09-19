@@ -22,31 +22,32 @@ namespace DS1
 
         public void LoadCedulas()
         {
-            var cedulas = Entities.Cedulas.Select(c=>new {
-            c.Id,
-            c.Codigo,
-            c.Nombre,
-            c.Apellido,
-            c.FechaNacimiento,
-            c.FechaExpiracion,
-            Direccion = c.DireccionResidencia,
-            Colegio =c.Colegio.Nombre,
-            Nacionalidad=c.Nacionalidad.Descripcion,
-            Nacimiento=c.LugarNacimiento.Descripcion,
-            Sexo = c.Sexo.Descripcion,
-            TipoSangre = c.TipoSangre.Descripcion,
-            Ocupacion = c.Ocupacion.Descripcion,
-            EstadoCivil = c.EstadoCivil.Descripcion,
-            Municipio = c.Municipio.Descripcion,
-            Sector=c.Sector.Descripcion,
-            Estado = (c.Estado==1)?"Activo":"Inactivo",
+            var cedulas = Entities.Cedulas.Select(c => new
+            {
+                c.Id,
+                c.Codigo,
+                c.Nombre,
+                c.Apellido,
+                c.FechaNacimiento,
+                c.FechaExpiracion,
+                Direccion = c.DireccionResidencia,
+                Colegio = c.Colegio.Nombre,
+                Nacionalidad = c.Nacionalidad.Descripcion,
+                Nacimiento = c.LugarNacimiento.Descripcion,
+                Sexo = c.Sexo.Descripcion,
+                TipoSangre = c.TipoSangre.Descripcion,
+                Ocupacion = c.Ocupacion.Descripcion,
+                EstadoCivil = c.EstadoCivil.Descripcion,
+                Municipio = c.Municipio.Descripcion,
+                Sector = c.Sector.Descripcion,
+                Estado = (c.Estado == 1) ? "Activo" : "Inactivo",
             }).ToList();
             dtgCedulas.DataSource = cedulas;
         }
 
         private void addButtom_Click(object sender, EventArgs e)
         {
-            var AddCedulaForm = new AddCedula();
+            var AddCedulaForm = new GestionCedula();
             AddCedulaForm.Show();
         }
 
@@ -88,6 +89,39 @@ namespace DS1
                    Estado = (c.Estado == 1) ? "Activo" : "Inactivo",
                }).ToList();
             dtgCedulas.DataSource = cedulas;
+        }
+
+        private void editButton_Click(object sender, EventArgs e)
+        {
+            if (dtgCedulas.SelectedRows.Count != 0)
+            {
+                var cedulaSelected = dtgCedulas.SelectedRows[0].Cells[0].Value.ToString();
+                var EditCedulaForm = new GestionCedula();
+                EditCedulaForm.cedulaToEditId = int.Parse(cedulaSelected);
+                EditCedulaForm.Show();
+                EditCedulaForm.LoadData();
+            }
+        }
+
+        private void PrevisualizarButton_Click(object sender, EventArgs e)
+        {   
+            if (dtgCedulas.SelectedRows.Count != 0) 
+            { 
+                var cedulaSelected = dtgCedulas.SelectedRows[0].Cells[0].Value.ToString();
+                var Previsualizar = new PrevisualizarCedula();
+                Previsualizar.cedulaToEditId = int.Parse(cedulaSelected);
+                Previsualizar.Show();
+            }
+        }
+
+        private void dtgCedulas_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            dtgCedulas.ClearSelection();
+        }
+
+        private void dtgCedulas_Enter(object sender, EventArgs e)
+        {
+            LoadCedulas();
         }
     }
 }

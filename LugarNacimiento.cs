@@ -25,6 +25,7 @@ namespace DS1
         public System.DateTime FechaCreacion { get; set; }
         public Nullable<System.DateTime> FechaModificacion { get; set; }
         public int Id { get; set; }
+        public Nullable<int> Codigo { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Cedula> Cedulas { get; set; }

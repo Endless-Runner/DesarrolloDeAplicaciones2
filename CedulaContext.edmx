@@ -61,6 +61,7 @@
           <Property Name="FechaCreacion" Type="datetime" Nullable="false" />
           <Property Name="FechaModificacion" Type="datetime" />
           <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Codigo" Type="int" />
         </EntityType>
         <EntityType Name="Municipio">
           <Key>
@@ -318,6 +319,7 @@
           <Property Name="FechaModificacion" Type="DateTime" Precision="3" />
           <Property Name="Id" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Cedulas" Relationship="Self.FK_CedulaLugarNacimiento" FromRole="LugarNacimiento" ToRole="Cedula" />
+          <Property Name="Codigo" Type="Int32" />
         </EntityType>
         <EntityType Name="Municipio">
           <Key>
@@ -609,6 +611,7 @@
           <EntitySetMapping Name="LugarNacimientoes">
             <EntityTypeMapping TypeName="CedulaModel.LugarNacimiento">
               <MappingFragment StoreEntitySet="LugarNacimiento">
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
                 <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
                 <ScalarProperty Name="Estado" ColumnName="Estado" />
                 <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />

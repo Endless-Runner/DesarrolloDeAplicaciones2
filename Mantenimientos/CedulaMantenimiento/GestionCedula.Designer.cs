@@ -1,7 +1,7 @@
 ﻿
 namespace DS1.Mantenimientos.CedulaMantenimiento
 {
-    partial class AddCedula
+    partial class GestionCedula
     {
         /// <summary>
         /// Required designer variable.
@@ -261,7 +261,7 @@ namespace DS1.Mantenimientos.CedulaMantenimiento
             // 
             // addButton
             // 
-            this.addButton.Location = new System.Drawing.Point(476, 385);
+            this.addButton.Location = new System.Drawing.Point(437, 383);
             this.addButton.Name = "addButton";
             this.addButton.Size = new System.Drawing.Size(75, 23);
             this.addButton.TabIndex = 24;
@@ -271,7 +271,7 @@ namespace DS1.Mantenimientos.CedulaMantenimiento
             // 
             // CancelButton
             // 
-            this.CancelButton.Location = new System.Drawing.Point(639, 383);
+            this.CancelButton.Location = new System.Drawing.Point(589, 383);
             this.CancelButton.Name = "CancelButton";
             this.CancelButton.Size = new System.Drawing.Size(75, 23);
             this.CancelButton.TabIndex = 25;
@@ -296,7 +296,7 @@ namespace DS1.Mantenimientos.CedulaMantenimiento
             this.cbColegio.Size = new System.Drawing.Size(200, 21);
             this.cbColegio.TabIndex = 26;
             // 
-            // AddCedula
+            // GestionCedula
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -329,7 +329,7 @@ namespace DS1.Mantenimientos.CedulaMantenimiento
             this.Controls.Add(this.tbApellido);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tbNombre);
-            this.Name = "AddCedula";
+            this.Name = "GestionCedula";
             this.Text = "AddorEditCedula";
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -121,4 +121,10 @@
   <data name="logo_intec" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logo_intec.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="avatar--320x3781" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\avatar--320x378.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="avatar--320x378" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\avatar--320x378.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

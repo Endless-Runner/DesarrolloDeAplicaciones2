@@ -121,11 +121,17 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Mantenimientos\CedulaMantenimiento\AddCedula.cs">
+    <Compile Include="Mantenimientos\CedulaMantenimiento\GestionCedula.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Mantenimientos\CedulaMantenimiento\AddCedula.Designer.cs">
-      <DependentUpon>AddCedula.cs</DependentUpon>
+    <Compile Include="Mantenimientos\CedulaMantenimiento\GestionCedula.Designer.cs">
+      <DependentUpon>GestionCedula.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\CedulaMantenimiento\PrevisualizarCedula.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\CedulaMantenimiento\PrevisualizarCedula.Designer.cs">
+      <DependentUpon>PrevisualizarCedula.cs</DependentUpon>
     </Compile>
     <Compile Include="Municipio.cs">
       <DependentUpon>CedulaContext.tt</DependentUpon>
@@ -138,6 +144,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Resources\EstadosEnum.cs" />
     <Compile Include="Role.cs">
       <DependentUpon>db.tt</DependentUpon>
@@ -178,19 +189,17 @@
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Mantenimientos\CedulaMantenimiento\AddCedula.resx">
-      <DependentUpon>AddCedula.cs</DependentUpon>
+    <EmbeddedResource Include="Mantenimientos\CedulaMantenimiento\GestionCedula.resx">
+      <DependentUpon>GestionCedula.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\CedulaMantenimiento\PrevisualizarCedula.resx">
+      <DependentUpon>PrevisualizarCedula.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="RoleForm.resx">
       <DependentUpon>RoleForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -249,6 +258,7 @@
       <DependentUpon>db.edmx</DependentUpon>
       <LastGenOutput>db.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\avatar--320x378.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
