@@ -14,16 +14,16 @@ namespace DS1.Mantenimientos.CedulaMantenimiento
     {
         CedulaEntities Entities = new CedulaEntities();
         CedulaForm cdform = new CedulaForm();
-        public int cedulaToEditId;
+        
         public PrevisualizarCedula()
         {
             InitializeComponent();
-            LoadData();
+            
         }
 
-        void LoadData()
+      public  void LoadData(int Id)
         {
-            var Cedula = Entities.Cedulas.Find(cedulaToEditId);
+            var Cedula = Entities.Cedulas.Find(Id);
             lNombre.Text = Cedula.Nombre;
             lPrueba.Text = Cedula.Apellido;
             lCodigo.Text = Cedula.Codigo;

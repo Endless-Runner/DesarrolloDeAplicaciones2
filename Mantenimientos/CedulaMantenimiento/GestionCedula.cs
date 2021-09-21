@@ -84,7 +84,7 @@ namespace DS1.Mantenimientos.CedulaMantenimiento
             DateTime FechaExpiracion = Convert.ToDateTime(diaMesNacimiento + anoVencimiento);
             return new Cedula
             {
-                Codigo = Entities.LugarNacimientoes.FirstOrDefault(l => l.Id == cbLugarNacimiento.SelectedIndex).Codigo + "-" + rnd.Next(1000000, 9999999),
+                Codigo = Entities.LugarNacimientoes.FirstOrDefault(l => l.Descripcion == cbLugarNacimiento.Text).Codigo + "-" + rnd.Next(1000000, 9999999),
                 Nombre = tbNombre.Text,
                 Apellido = tbApellido.Text,
                 FechaNacimiento = dtFechaNacimiento.Value,
@@ -97,8 +97,8 @@ namespace DS1.Mantenimientos.CedulaMantenimiento
                 IdOcupacion = cbOcupacion.SelectedIndex+1,
                 IdEstadoCivil = cbOcupacion.SelectedIndex+1,
                 IdMunicipio = cbMunicipio.SelectedIndex+1,
-                IdSector = Entities.Sectors.FirstOrDefault(c => c.Descripcion == cbSector.SelectedText).Id,
-                IdColegioElectoral = Entities.Colegios.FirstOrDefault(c=>c.Nombre==cbColegio.SelectedText).Id,
+                IdSector = Entities.Sectors.FirstOrDefault(c => c.Descripcion == cbSector.Text).Id,
+                IdColegioElectoral = Entities.Colegios.FirstOrDefault(c=>c.Nombre==cbColegio.Text).Id,
                 Estado = (int)EstadosEnum.Activo,
                 FechaCreacion = DateTime.UtcNow.AddMinutes(-240)
             };

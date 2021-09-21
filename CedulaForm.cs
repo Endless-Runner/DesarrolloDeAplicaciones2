@@ -109,8 +109,8 @@ namespace DS1
             { 
                 var cedulaSelected = dtgCedulas.SelectedRows[0].Cells[0].Value.ToString();
                 var Previsualizar = new PrevisualizarCedula();
-                Previsualizar.cedulaToEditId = int.Parse(cedulaSelected);
                 Previsualizar.Show();
+                Previsualizar.LoadData(int.Parse(cedulaSelected));
             }
         }
 
