@@ -72,5 +72,11 @@ namespace DS1
             var CedulaForm = new CedulaForm() { MdiParent = this };
             CedulaForm.Show();
         }
+
+        private void tipoSangreToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var Bloodform = new Bloodtype() { MdiParent = this };
+            Bloodform.Show();
+        }
     }
 }

@@ -347,7 +347,7 @@ namespace DS1
             // usuariosToolStripMenuItem
             // 
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.usuariosToolStripMenuItem.Text = "Usuarios";
             this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
             // 
@@ -382,6 +382,7 @@ namespace DS1
             this.tipoSangreToolStripMenuItem.Name = "tipoSangreToolStripMenuItem";
             this.tipoSangreToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.tipoSangreToolStripMenuItem.Text = "Tipo Sangre";
+            this.tipoSangreToolStripMenuItem.Click += new System.EventHandler(this.tipoSangreToolStripMenuItem_Click);
             // 
             // sexoToolStripMenuItem
             // 

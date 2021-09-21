@@ -34,5 +34,10 @@ namespace DS1
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_get_users_Result>("sp_get_users");
         }
+
+        internal int SaveChanges()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

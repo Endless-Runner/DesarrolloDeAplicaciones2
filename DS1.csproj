@@ -55,6 +55,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bloodtype.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bloodtype.Designer.cs">
+      <DependentUpon>Bloodtype.cs</DependentUpon>
+    </Compile>
     <Compile Include="CareerForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -180,6 +186,9 @@
     <Compile Include="UserForm.Designer.cs">
       <DependentUpon>UserForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Bloodtype.resx">
+      <DependentUpon>Bloodtype.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CedulaForm.resx">
       <DependentUpon>CedulaForm.cs</DependentUpon>
     </EmbeddedResource>
