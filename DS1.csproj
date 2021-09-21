@@ -133,6 +133,12 @@
     <Compile Include="Mantenimientos\CedulaMantenimiento\PrevisualizarCedula.Designer.cs">
       <DependentUpon>PrevisualizarCedula.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mantenimientos\ColegioElectoralMantenimiento\ColegioElectoral.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\ColegioElectoralMantenimiento\ColegioElectoral.Designer.cs">
+      <DependentUpon>ColegioElectoral.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mantenimientos\EstadoCivilMantenimiento\EstadoCivilForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -231,6 +237,9 @@
     <EmbeddedResource Include="Mantenimientos\CedulaMantenimiento\PrevisualizarCedula.resx">
       <DependentUpon>PrevisualizarCedula.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\ColegioElectoralMantenimiento\ColegioElectoral.resx">
+      <DependentUpon>ColegioElectoral.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Mantenimientos\EstadoCivilMantenimiento\EstadoCivilForm.resx">
       <DependentUpon>EstadoCivilForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -318,7 +327,6 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Mantenimientos\ColegioElectoralMantenimiento\" />
     <Folder Include="Mantenimientos\MunicipioMantenimiento\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

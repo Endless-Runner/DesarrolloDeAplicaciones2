@@ -1,4 +1,5 @@
-﻿using DS1.Mantenimientos.EstadoCivilMantenimiento;
+﻿using DS1.Mantenimientos.ColegioElectoralMantenimiento;
+using DS1.Mantenimientos.EstadoCivilMantenimiento;
 using DS1.Mantenimientos.LugarNacimientoMant;
 using DS1.Mantenimientos.NacionalidadMantenimiento;
 using DS1.Mantenimientos.OcupacionMantenimiento;
@@ -113,6 +114,12 @@ namespace DS1
         {
             var sectorForm = new SectorForm() { MdiParent = this };
             sectorForm.Show();
+        }
+
+        private void colegioElectoralToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var colegioForm = new ColegioElectoralForm() { MdiParent = this };
+            colegioForm.Show();
         }
     }
 }
