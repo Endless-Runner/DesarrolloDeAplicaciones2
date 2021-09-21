@@ -107,5 +107,11 @@ namespace DS1
             var nacionForm = new NacionalidadForm() { MdiParent = this };
             nacionForm.Show();
         }
+        private void tipoSangreToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var Bloodform = new Bloodtype() { MdiParent = this };
+            Bloodform.Show();
+        }
+
     }
 }
