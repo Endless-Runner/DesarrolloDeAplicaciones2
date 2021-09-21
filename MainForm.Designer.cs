@@ -80,6 +80,7 @@ namespace DS1
             this.horizontalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verticalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.iconosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lugarDeNacimientoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -372,7 +373,8 @@ namespace DS1
             this.mantenimientosToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tipoSangreToolStripMenuItem,
             this.sexoToolStripMenuItem,
-            this.ocupacionToolStripMenuItem});
+            this.ocupacionToolStripMenuItem,
+            this.lugarDeNacimientoToolStripMenuItem});
             this.mantenimientosToolStripMenuItem1.Name = "mantenimientosToolStripMenuItem1";
             this.mantenimientosToolStripMenuItem1.Size = new System.Drawing.Size(203, 22);
             this.mantenimientosToolStripMenuItem1.Text = "Campos Mantenimiento";
@@ -380,19 +382,19 @@ namespace DS1
             // tipoSangreToolStripMenuItem
             // 
             this.tipoSangreToolStripMenuItem.Name = "tipoSangreToolStripMenuItem";
-            this.tipoSangreToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.tipoSangreToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
             this.tipoSangreToolStripMenuItem.Text = "Tipo Sangre";
             // 
             // sexoToolStripMenuItem
             // 
             this.sexoToolStripMenuItem.Name = "sexoToolStripMenuItem";
-            this.sexoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.sexoToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
             this.sexoToolStripMenuItem.Text = "Sexo";
             // 
             // ocupacionToolStripMenuItem
             // 
             this.ocupacionToolStripMenuItem.Name = "ocupacionToolStripMenuItem";
-            this.ocupacionToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ocupacionToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
             this.ocupacionToolStripMenuItem.Text = "Ocupacion";
             // 
             // helpToolStripMenuItem
@@ -475,6 +477,13 @@ namespace DS1
             this.iconosToolStripMenuItem.Text = "Iconos";
             this.iconosToolStripMenuItem.Click += new System.EventHandler(this.iconosToolStripMenuItem_Click);
             // 
+            // lugarDeNacimientoToolStripMenuItem
+            // 
+            this.lugarDeNacimientoToolStripMenuItem.Name = "lugarDeNacimientoToolStripMenuItem";
+            this.lugarDeNacimientoToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.lugarDeNacimientoToolStripMenuItem.Text = "Lugar de Nacimiento";
+            this.lugarDeNacimientoToolStripMenuItem.Click += new System.EventHandler(this.lugarDeNacimientoToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -551,5 +560,6 @@ namespace DS1
         private System.Windows.Forms.ToolStripMenuItem tipoSangreToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sexoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ocupacionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem lugarDeNacimientoToolStripMenuItem;
     }
 }

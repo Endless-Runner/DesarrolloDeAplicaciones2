@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DS1.Mantenimientos.LugarNacimientoMant;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -71,6 +72,12 @@ namespace DS1
         {
             var CedulaForm = new CedulaForm() { MdiParent = this };
             CedulaForm.Show();
+        }
+
+        private void lugarDeNacimientoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var lugarNacimientoForm = new LugarNacimientoForm() { MdiParent = this };
+            lugarNacimientoForm.Show();
         }
     }
 }

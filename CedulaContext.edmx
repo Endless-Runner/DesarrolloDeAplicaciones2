@@ -60,8 +60,8 @@
           <Property Name="Estado" Type="int" Nullable="false" />
           <Property Name="FechaCreacion" Type="datetime" Nullable="false" />
           <Property Name="FechaModificacion" Type="datetime" />
-          <Property Name="Id" Type="int" Nullable="false" />
           <Property Name="Codigo" Type="int" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
         </EntityType>
         <EntityType Name="Municipio">
           <Key>
