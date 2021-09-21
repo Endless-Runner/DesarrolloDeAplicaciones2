@@ -1,4 +1,5 @@
-﻿using DS1.Mantenimientos.EstadoCivilMantenimiento;
+﻿using DS1.Mantenimientos;
+using DS1.Mantenimientos.EstadoCivilMantenimiento;
 using DS1.Mantenimientos.LugarNacimientoMant;
 using DS1.Mantenimientos.NacionalidadMantenimiento;
 using DS1.Mantenimientos.OcupacionMantenimiento;
@@ -113,5 +114,12 @@ namespace DS1
             Bloodform.Show();
         }
 
+        private void municipioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var Municipioform = new MunicipioForm() { MdiParent = this };
+            Municipioform.Show();
+
+            
+        }
     }
 }

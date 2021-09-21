@@ -352,7 +352,7 @@ namespace DS1
             // usuariosToolStripMenuItem
             // 
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
             this.usuariosToolStripMenuItem.Text = "Usuarios";
             this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
             // 
@@ -419,6 +419,7 @@ namespace DS1
             this.municipioToolStripMenuItem.Name = "municipioToolStripMenuItem";
             this.municipioToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
             this.municipioToolStripMenuItem.Text = "Municipio";
+            this.municipioToolStripMenuItem.Click += new System.EventHandler(this.municipioToolStripMenuItem_Click);
             // 
             // nacionalidadToolStripMenuItem
             // 
