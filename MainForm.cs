@@ -1,8 +1,10 @@
-﻿using DS1.Mantenimientos;
+﻿using DS1.Mantenimientos.ColegioElectoralMantenimiento;
+using DS1.Mantenimientos;
 using DS1.Mantenimientos.EstadoCivilMantenimiento;
 using DS1.Mantenimientos.LugarNacimientoMant;
 using DS1.Mantenimientos.NacionalidadMantenimiento;
 using DS1.Mantenimientos.OcupacionMantenimiento;
+using DS1.Mantenimientos.SectorMantenimiento;
 using DS1.Mantenimientos.SexoMantenimiento;
 using System;
 using System.Collections.Generic;
@@ -107,6 +109,18 @@ namespace DS1
         {
             var nacionForm = new NacionalidadForm() { MdiParent = this };
             nacionForm.Show();
+        }
+
+        private void sectorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var sectorForm = new SectorForm() { MdiParent = this };
+            sectorForm.Show();
+        }
+
+        private void colegioElectoralToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var colegioForm = new ColegioElectoralForm() { MdiParent = this };
+            colegioForm.Show();
         }
         private void tipoSangreToolStripMenuItem_Click(object sender, EventArgs e)
         {

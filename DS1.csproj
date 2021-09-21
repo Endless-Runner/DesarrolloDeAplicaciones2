@@ -139,6 +139,12 @@
     <Compile Include="Mantenimientos\CedulaMantenimiento\PrevisualizarCedula.Designer.cs">
       <DependentUpon>PrevisualizarCedula.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mantenimientos\ColegioElectoralMantenimiento\ColegioElectoral.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\ColegioElectoralMantenimiento\ColegioElectoral.Designer.cs">
+      <DependentUpon>ColegioElectoral.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mantenimientos\EstadoCivilMantenimiento\EstadoCivilForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -168,6 +174,12 @@
     </Compile>
     <Compile Include="Mantenimientos\OcupacionMantenimiento\OcupacionForm.Designer.cs">
       <DependentUpon>OcupacionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\SectorMantenimiento\SectorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\SectorMantenimiento\SectorForm.Designer.cs">
+      <DependentUpon>SectorForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Mantenimientos\SexoMantenimiento\SexoForm.cs">
       <SubType>Form</SubType>
@@ -240,6 +252,9 @@
     <EmbeddedResource Include="Mantenimientos\CedulaMantenimiento\PrevisualizarCedula.resx">
       <DependentUpon>PrevisualizarCedula.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\ColegioElectoralMantenimiento\ColegioElectoral.resx">
+      <DependentUpon>ColegioElectoral.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Mantenimientos\EstadoCivilMantenimiento\EstadoCivilForm.resx">
       <DependentUpon>EstadoCivilForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -254,6 +269,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimientos\OcupacionMantenimiento\OcupacionForm.resx">
       <DependentUpon>OcupacionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\SectorMantenimiento\SectorForm.resx">
+      <DependentUpon>SectorForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimientos\SexoMantenimiento\SexoForm.resx">
       <DependentUpon>SexoForm.cs</DependentUpon>
@@ -327,9 +345,7 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Mantenimientos\ColegioElectoralMantenimiento\" />
     <Folder Include="Mantenimientos\MunicipioMantenimiento\" />
-    <Folder Include="Mantenimientos\SectorMantenimiento\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -413,6 +413,7 @@ namespace DS1
             this.sectorToolStripMenuItem.Name = "sectorToolStripMenuItem";
             this.sectorToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
             this.sectorToolStripMenuItem.Text = "Sector";
+            this.sectorToolStripMenuItem.Click += new System.EventHandler(this.sectorToolStripMenuItem_Click);
             // 
             // municipioToolStripMenuItem
             // 
@@ -440,6 +441,7 @@ namespace DS1
             this.colegioElectoralToolStripMenuItem.Name = "colegioElectoralToolStripMenuItem";
             this.colegioElectoralToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
             this.colegioElectoralToolStripMenuItem.Text = "Colegio Electoral";
+            this.colegioElectoralToolStripMenuItem.Click += new System.EventHandler(this.colegioElectoralToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
