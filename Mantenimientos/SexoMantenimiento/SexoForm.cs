@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DS1.Resources;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,56 +8,51 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DS1.Resources;
 
-namespace DS1.Mantenimientos.LugarNacimientoMant
+namespace DS1.Mantenimientos.SexoMantenimiento
 {
-    public partial class LugarNacimientoForm : Form
+    public partial class SexoForm : Form
     {
         CedulaEntities db = new CedulaEntities();
         List<string> msg = new List<string>();
 
-        public LugarNacimientoForm()
+        public SexoForm()
         {
             InitializeComponent();
-            LoadLugar();
+            LoadSexo();
         }
 
-        public void LoadLugar()
+        public void LoadSexo()
         {
-            var lugares = db.LugarNacimientoes.ToList();
+            var sexo = db.Sexoes.ToList();
 
             if (!string.IsNullOrEmpty(txtFilter.Text))
             {
-                lugares = lugares.Where(x => x.Descripcion.Contains(txtFilter.Text)).ToList();
+                sexo = sexo.Where(x => x.Descripcion.Contains(txtFilter.Text)).ToList();
             }
-            if (!string.IsNullOrEmpty(txtCodigoFilter.Text))
-            {
-                lugares = lugares.Where(x => x.Codigo.Equals(Convert.ToInt32(txtCodigoFilter.Text))).ToList();
-            }
-            dataGridLugar.DataSource = lugares.ToList();
+
+            dataGridLugar.DataSource = sexo.ToList();
         }
 
-        
+
         void Save()
         {
-            
+
             try
             {
-                var lugares = new LugarNacimiento
+                var sexo = new Sexo
                 {
                     Descripcion = txtDesc.Text,
                     Estado = (int)EstadosEnum.Activo,
                     FechaCreacion = DateTime.UtcNow.AddMinutes(-240),
-                    Codigo = Convert.ToInt32(txtCodigo.Text)
                 };
 
-                db.LugarNacimientoes.Add(lugares);
+                db.Sexoes.Add(sexo);
                 bool result = db.SaveChanges() > 0;
 
                 if (result)
                 {
-                    LoadLugar();
+                    LoadSexo();
 
                     ClearForm();
                 }
@@ -70,9 +66,23 @@ namespace DS1.Mantenimientos.LugarNacimientoMant
         void ClearForm()
         {
             txtDesc.Text = string.Empty;
-            txtCodigo.Text = string.Empty;
         }
-        private void button1_Click(object sender, EventArgs e)
+
+        bool ValidateSaving()
+        {
+            msg = new List<string>();
+            bool result = true;
+
+            if (string.IsNullOrEmpty(txtDesc.Text))
+            {
+                msg.Add("La descripcion es Requerida.");
+                result = false;
+            }
+
+            return result;
+        }
+
+        private void btnAgregar_Click_1(object sender, EventArgs e)
         {
             if (ValidateSaving() == true)
             {
@@ -89,28 +99,10 @@ namespace DS1.Mantenimientos.LugarNacimientoMant
                 MessageBox.Show(list, "INTEC");
             }
         }
-        bool ValidateSaving()
+
+        private void btnFilter_Click_1(object sender, EventArgs e)
         {
-            msg = new List<string>();
-            bool result = true;
-
-            if (string.IsNullOrEmpty(txtDesc.Text))
-            {
-                msg.Add("La descripcion es Requerida.");
-                result = false;
-            }
-            if (string.IsNullOrEmpty(txtCodigo.Text))
-            {
-                msg.Add("El Codigo es Requerido.");
-                result = false;
-            }
-
-            return result;
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            LoadLugar();
+            LoadSexo();
         }
     }
 }

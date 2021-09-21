@@ -66,9 +66,12 @@ namespace DS1
             this.cedulaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.crearToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mantenimientosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.tipoSangreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sexoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ocupacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lugarDeNacimientoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tipoSangreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sectorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.municipioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nacionalidadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.indexToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -80,7 +83,8 @@ namespace DS1
             this.horizontalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verticalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.iconosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.lugarDeNacimientoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.estadoCivilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.colegioElectoralToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -371,13 +375,31 @@ namespace DS1
             // mantenimientosToolStripMenuItem1
             // 
             this.mantenimientosToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tipoSangreToolStripMenuItem,
-            this.sexoToolStripMenuItem,
             this.ocupacionToolStripMenuItem,
-            this.lugarDeNacimientoToolStripMenuItem});
+            this.lugarDeNacimientoToolStripMenuItem,
+            this.tipoSangreToolStripMenuItem,
+            this.sectorToolStripMenuItem,
+            this.municipioToolStripMenuItem,
+            this.nacionalidadToolStripMenuItem,
+            this.estadoCivilToolStripMenuItem,
+            this.colegioElectoralToolStripMenuItem});
             this.mantenimientosToolStripMenuItem1.Name = "mantenimientosToolStripMenuItem1";
             this.mantenimientosToolStripMenuItem1.Size = new System.Drawing.Size(203, 22);
             this.mantenimientosToolStripMenuItem1.Text = "Campos Mantenimiento";
+            // 
+            // ocupacionToolStripMenuItem
+            // 
+            this.ocupacionToolStripMenuItem.Name = "ocupacionToolStripMenuItem";
+            this.ocupacionToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.ocupacionToolStripMenuItem.Text = "Ocupacion";
+            this.ocupacionToolStripMenuItem.Click += new System.EventHandler(this.ocupacionToolStripMenuItem_Click);
+            // 
+            // lugarDeNacimientoToolStripMenuItem
+            // 
+            this.lugarDeNacimientoToolStripMenuItem.Name = "lugarDeNacimientoToolStripMenuItem";
+            this.lugarDeNacimientoToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.lugarDeNacimientoToolStripMenuItem.Text = "Lugar de Nacimiento";
+            this.lugarDeNacimientoToolStripMenuItem.Click += new System.EventHandler(this.lugarDeNacimientoToolStripMenuItem_Click);
             // 
             // tipoSangreToolStripMenuItem
             // 
@@ -385,17 +407,23 @@ namespace DS1
             this.tipoSangreToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
             this.tipoSangreToolStripMenuItem.Text = "Tipo Sangre";
             // 
-            // sexoToolStripMenuItem
+            // sectorToolStripMenuItem
             // 
-            this.sexoToolStripMenuItem.Name = "sexoToolStripMenuItem";
-            this.sexoToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
-            this.sexoToolStripMenuItem.Text = "Sexo";
+            this.sectorToolStripMenuItem.Name = "sectorToolStripMenuItem";
+            this.sectorToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.sectorToolStripMenuItem.Text = "Sector";
             // 
-            // ocupacionToolStripMenuItem
+            // municipioToolStripMenuItem
             // 
-            this.ocupacionToolStripMenuItem.Name = "ocupacionToolStripMenuItem";
-            this.ocupacionToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
-            this.ocupacionToolStripMenuItem.Text = "Ocupacion";
+            this.municipioToolStripMenuItem.Name = "municipioToolStripMenuItem";
+            this.municipioToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.municipioToolStripMenuItem.Text = "Municipio";
+            // 
+            // nacionalidadToolStripMenuItem
+            // 
+            this.nacionalidadToolStripMenuItem.Name = "nacionalidadToolStripMenuItem";
+            this.nacionalidadToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.nacionalidadToolStripMenuItem.Text = "Nacionalidad";
             // 
             // helpToolStripMenuItem
             // 
@@ -477,12 +505,18 @@ namespace DS1
             this.iconosToolStripMenuItem.Text = "Iconos";
             this.iconosToolStripMenuItem.Click += new System.EventHandler(this.iconosToolStripMenuItem_Click);
             // 
-            // lugarDeNacimientoToolStripMenuItem
+            // estadoCivilToolStripMenuItem
             // 
-            this.lugarDeNacimientoToolStripMenuItem.Name = "lugarDeNacimientoToolStripMenuItem";
-            this.lugarDeNacimientoToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
-            this.lugarDeNacimientoToolStripMenuItem.Text = "Lugar de Nacimiento";
-            this.lugarDeNacimientoToolStripMenuItem.Click += new System.EventHandler(this.lugarDeNacimientoToolStripMenuItem_Click);
+            this.estadoCivilToolStripMenuItem.Name = "estadoCivilToolStripMenuItem";
+            this.estadoCivilToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.estadoCivilToolStripMenuItem.Text = "Estado Civil";
+            this.estadoCivilToolStripMenuItem.Click += new System.EventHandler(this.estadoCivilToolStripMenuItem_Click);
+            // 
+            // colegioElectoralToolStripMenuItem
+            // 
+            this.colegioElectoralToolStripMenuItem.Name = "colegioElectoralToolStripMenuItem";
+            this.colegioElectoralToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.colegioElectoralToolStripMenuItem.Text = "Colegio Electoral";
             // 
             // MainForm
             // 
@@ -557,9 +591,13 @@ namespace DS1
         private System.Windows.Forms.ToolStripMenuItem cedulaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem crearToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mantenimientosToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem tipoSangreToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem sexoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ocupacionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem lugarDeNacimientoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tipoSangreToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sectorToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem municipioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem nacionalidadToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem estadoCivilToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem colegioElectoralToolStripMenuItem;
     }
 }

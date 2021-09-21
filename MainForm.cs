@@ -1,4 +1,7 @@
-﻿using DS1.Mantenimientos.LugarNacimientoMant;
+﻿using DS1.Mantenimientos.EstadoCivilMantenimiento;
+using DS1.Mantenimientos.LugarNacimientoMant;
+using DS1.Mantenimientos.OcupacionMantenimiento;
+using DS1.Mantenimientos.SexoMantenimiento;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -78,6 +81,24 @@ namespace DS1
         {
             var lugarNacimientoForm = new LugarNacimientoForm() { MdiParent = this };
             lugarNacimientoForm.Show();
+        }
+
+        private void ocupacionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var ocupacionForm = new OcupacionForm() { MdiParent = this };
+            ocupacionForm.Show();
+        }
+
+        private void sexoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var sexoForm = new SexoForm() { MdiParent = this };
+            sexoForm.Show();
+        }
+
+        private void estadoCivilToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var estadocForm = new EstadoCivilForm() { MdiParent = this };
+            estadocForm.Show();
         }
     }
 }
