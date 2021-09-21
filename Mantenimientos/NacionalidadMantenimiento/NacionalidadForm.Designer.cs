@@ -1,7 +1,7 @@
 ﻿
-namespace DS1.Mantenimientos.EstadoCivilMantenimiento
+namespace DS1.Mantenimientos.NacionalidadMantenimiento
 {
-    partial class EstadoCivilForm
+    partial class NacionalidadForm
     {
         /// <summary>
         /// Required designer variable.
@@ -60,7 +60,7 @@ namespace DS1.Mantenimientos.EstadoCivilMantenimiento
             this.groupBox2.Size = new System.Drawing.Size(207, 156);
             this.groupBox2.TabIndex = 30;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Buscar Estado Civil";
+            this.groupBox2.Text = "Buscar Nacionalidad";
             // 
             // btnFilter
             // 
@@ -113,7 +113,7 @@ namespace DS1.Mantenimientos.EstadoCivilMantenimiento
             this.groupBox1.Size = new System.Drawing.Size(207, 156);
             this.groupBox1.TabIndex = 29;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Agregar Estado Civil";
+            this.groupBox1.Text = "Agregar Nacionalidad";
             // 
             // btnAgregar
             // 
@@ -201,7 +201,7 @@ namespace DS1.Mantenimientos.EstadoCivilMantenimiento
             this.dataGridLugar.Size = new System.Drawing.Size(776, 264);
             this.dataGridLugar.TabIndex = 28;
             // 
-            // EstadoCivilForm
+            // NacionalidadForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -209,8 +209,8 @@ namespace DS1.Mantenimientos.EstadoCivilMantenimiento
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridLugar);
-            this.Name = "EstadoCivilForm";
-            this.Text = "EstadoCivilForm";
+            this.Name = "NacionalidadForm";
+            this.Text = "NacionalidadForm";
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);

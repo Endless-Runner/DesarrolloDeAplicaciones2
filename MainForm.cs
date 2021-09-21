@@ -1,5 +1,6 @@
 ﻿using DS1.Mantenimientos.EstadoCivilMantenimiento;
 using DS1.Mantenimientos.LugarNacimientoMant;
+using DS1.Mantenimientos.NacionalidadMantenimiento;
 using DS1.Mantenimientos.OcupacionMantenimiento;
 using DS1.Mantenimientos.SexoMantenimiento;
 using System;
@@ -99,6 +100,12 @@ namespace DS1
         {
             var estadocForm = new EstadoCivilForm() { MdiParent = this };
             estadocForm.Show();
+        }
+
+        private void nacionalidadToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var nacionForm = new NacionalidadForm() { MdiParent = this };
+            nacionForm.Show();
         }
     }
 }

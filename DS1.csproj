@@ -145,6 +145,12 @@
     <Compile Include="Mantenimientos\LugarNacimientoMant\LugarNacimientoForm.Designer.cs">
       <DependentUpon>LugarNacimientoForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mantenimientos\NacionalidadMantenimiento\NacionalidadForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\NacionalidadMantenimiento\NacionalidadForm.Designer.cs">
+      <DependentUpon>NacionalidadForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mantenimientos\OcupacionMantenimiento\OcupacionForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -225,6 +231,9 @@
     <EmbeddedResource Include="Mantenimientos\LugarNacimientoMant\LugarNacimientoForm.resx">
       <DependentUpon>LugarNacimientoForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\NacionalidadMantenimiento\NacionalidadForm.resx">
+      <DependentUpon>NacionalidadForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Mantenimientos\OcupacionMantenimiento\OcupacionForm.resx">
       <DependentUpon>OcupacionForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -302,7 +311,6 @@
   <ItemGroup>
     <Folder Include="Mantenimientos\ColegioElectoralMantenimiento\" />
     <Folder Include="Mantenimientos\MunicipioMantenimiento\" />
-    <Folder Include="Mantenimientos\NacionalidadMantenimiento\" />
     <Folder Include="Mantenimientos\SectorMantenimiento\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

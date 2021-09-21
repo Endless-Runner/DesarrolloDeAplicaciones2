@@ -72,6 +72,8 @@ namespace DS1
             this.sectorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.municipioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nacionalidadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.estadoCivilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.colegioElectoralToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.indexToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -83,8 +85,6 @@ namespace DS1
             this.horizontalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verticalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.iconosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.estadoCivilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.colegioElectoralToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -424,6 +424,20 @@ namespace DS1
             this.nacionalidadToolStripMenuItem.Name = "nacionalidadToolStripMenuItem";
             this.nacionalidadToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
             this.nacionalidadToolStripMenuItem.Text = "Nacionalidad";
+            this.nacionalidadToolStripMenuItem.Click += new System.EventHandler(this.nacionalidadToolStripMenuItem_Click);
+            // 
+            // estadoCivilToolStripMenuItem
+            // 
+            this.estadoCivilToolStripMenuItem.Name = "estadoCivilToolStripMenuItem";
+            this.estadoCivilToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.estadoCivilToolStripMenuItem.Text = "Estado Civil";
+            this.estadoCivilToolStripMenuItem.Click += new System.EventHandler(this.estadoCivilToolStripMenuItem_Click);
+            // 
+            // colegioElectoralToolStripMenuItem
+            // 
+            this.colegioElectoralToolStripMenuItem.Name = "colegioElectoralToolStripMenuItem";
+            this.colegioElectoralToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.colegioElectoralToolStripMenuItem.Text = "Colegio Electoral";
             // 
             // helpToolStripMenuItem
             // 
@@ -504,19 +518,6 @@ namespace DS1
             this.iconosToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
             this.iconosToolStripMenuItem.Text = "Iconos";
             this.iconosToolStripMenuItem.Click += new System.EventHandler(this.iconosToolStripMenuItem_Click);
-            // 
-            // estadoCivilToolStripMenuItem
-            // 
-            this.estadoCivilToolStripMenuItem.Name = "estadoCivilToolStripMenuItem";
-            this.estadoCivilToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
-            this.estadoCivilToolStripMenuItem.Text = "Estado Civil";
-            this.estadoCivilToolStripMenuItem.Click += new System.EventHandler(this.estadoCivilToolStripMenuItem_Click);
-            // 
-            // colegioElectoralToolStripMenuItem
-            // 
-            this.colegioElectoralToolStripMenuItem.Name = "colegioElectoralToolStripMenuItem";
-            this.colegioElectoralToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
-            this.colegioElectoralToolStripMenuItem.Text = "Colegio Electoral";
             // 
             // MainForm
             // 

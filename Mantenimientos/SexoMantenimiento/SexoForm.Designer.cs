@@ -60,7 +60,7 @@ namespace DS1.Mantenimientos.SexoMantenimiento
             this.groupBox2.Size = new System.Drawing.Size(207, 156);
             this.groupBox2.TabIndex = 30;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Buscar Ocupacion";
+            this.groupBox2.Text = "Buscar Sexo";
             // 
             // btnFilter
             // 
@@ -113,7 +113,7 @@ namespace DS1.Mantenimientos.SexoMantenimiento
             this.groupBox1.Size = new System.Drawing.Size(207, 156);
             this.groupBox1.TabIndex = 29;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Agregar Ocupacion";
+            this.groupBox1.Text = "Agregar Sexo";
             // 
             // btnAgregar
             // 
