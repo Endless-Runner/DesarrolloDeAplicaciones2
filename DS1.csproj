@@ -139,6 +139,36 @@
     <Compile Include="Mantenimientos\CedulaMantenimiento\PrevisualizarCedula.Designer.cs">
       <DependentUpon>PrevisualizarCedula.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mantenimientos\EstadoCivilMantenimiento\EstadoCivilForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\EstadoCivilMantenimiento\EstadoCivilForm.Designer.cs">
+      <DependentUpon>EstadoCivilForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\LugarNacimientoMant\LugarNacimientoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\LugarNacimientoMant\LugarNacimientoForm.Designer.cs">
+      <DependentUpon>LugarNacimientoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\NacionalidadMantenimiento\NacionalidadForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\NacionalidadMantenimiento\NacionalidadForm.Designer.cs">
+      <DependentUpon>NacionalidadForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\OcupacionMantenimiento\OcupacionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\OcupacionMantenimiento\OcupacionForm.Designer.cs">
+      <DependentUpon>OcupacionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\SexoMantenimiento\SexoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\SexoMantenimiento\SexoForm.Designer.cs">
+      <DependentUpon>SexoForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Municipio.cs">
       <DependentUpon>CedulaContext.tt</DependentUpon>
     </Compile>
@@ -203,6 +233,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimientos\CedulaMantenimiento\PrevisualizarCedula.resx">
       <DependentUpon>PrevisualizarCedula.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\EstadoCivilMantenimiento\EstadoCivilForm.resx">
+      <DependentUpon>EstadoCivilForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\LugarNacimientoMant\LugarNacimientoForm.resx">
+      <DependentUpon>LugarNacimientoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\NacionalidadMantenimiento\NacionalidadForm.resx">
+      <DependentUpon>NacionalidadForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\OcupacionMantenimiento\OcupacionForm.resx">
+      <DependentUpon>OcupacionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\SexoMantenimiento\SexoForm.resx">
+      <DependentUpon>SexoForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -272,6 +317,10 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Mantenimientos\ColegioElectoralMantenimiento\" />
+    <Folder Include="Mantenimientos\MunicipioMantenimiento\" />
+    <Folder Include="Mantenimientos\SectorMantenimiento\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
