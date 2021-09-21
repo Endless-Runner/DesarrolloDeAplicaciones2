@@ -33,37 +33,25 @@ namespace DS1.Mantenimientos.CedulaMantenimiento
             var cbMunicipioData = Entities.Municipios.Where(n => n.Estado == (int)EstadosEnum.Activo).Select(n => new { id = n.Id, text = n.Descripcion }).ToList();
 
             cbNacionalidadData.ForEach(data =>
-            cbNacionalidad.Items.Insert(data.id, data.text)
+            cbNacionalidad.Items.Insert(data.id-1, data.text)
             );
             cbLugarNacimientoData.ForEach(data =>
-            cbLugarNacimiento.Items.Insert(data.id, data.text)
+            cbLugarNacimiento.Items.Insert(data.id-1, data.text)
             );
             cbSexoData.ForEach(data =>
-            cbSexo.Items.Insert(data.id, data.text)
+            cbSexo.Items.Insert(data.id-1, data.text)
             );
             cbTipoSangreData.ForEach(data =>
-            cbTipoSangre.Items.Insert(data.id, data.text)
+            cbTipoSangre.Items.Insert(data.id-1, data.text)
             );
             cbOcupacionData.ForEach(data =>
-            cbOcupacion.Items.Insert(data.id, data.text)
+            cbOcupacion.Items.Insert(data.id-1, data.text)
             );
             cbEstadoCivilData.ForEach(data =>
-            cbEstadoCivil.Items.Insert(data.id, data.text)
+            cbEstadoCivil.Items.Insert(data.id-1, data.text)
             );
             cbMunicipioData.ForEach(data =>
-            cbMunicipio.Items.Insert(data.id, data.text)
-            );
-
-            var cbSectorData = Entities.Sectors.Where(n => n.Estado == (int)EstadosEnum.Activo && n.IdMunicipio == cbMunicipio.SelectedIndex).Select(n => new { id = n.Id, text = n.Descripcion }).ToList();
-            //necesita sacarlo de municipio 
-            cbSectorData.ForEach(data =>
-            cbSector.Items.Insert(data.id, data.text)
-            );
-
-            var cbColegioData = Entities.Colegios.Where(n => n.Estado == (int)EstadosEnum.Activo && n.IdMunicipio == cbMunicipio.SelectedIndex && n.IdSector == cbSector.SelectedIndex).Select(n => new { id = n.Id, text = n.Nombre }).ToList();
-            //necesita sacarlo de municipio y sector
-            cbColegioData.ForEach(data =>
-            cbColegio.Items.Insert(data.id, data.text)
+            cbMunicipio.Items.Insert(data.id-1, data.text)
             );
         }
         public void LoadData()
@@ -73,16 +61,18 @@ namespace DS1.Mantenimientos.CedulaMantenimiento
             tbApellido.Text = Cedula.Apellido;
             dtFechaNacimiento.Value = Cedula.FechaNacimiento;
             tbDireccionResidencia.Text = Cedula.DireccionResidencia;
-            cbColegio.SelectedIndex = Cedula.IdColegioElectoral;
-            cbNacionalidad.SelectedIndex = Cedula.IdNacional;
-            cbEstadoCivil.SelectedIndex = Cedula.IdEstadoCivil;
-            cbLugarNacimiento.SelectedIndex = Cedula.IdLugarNacimiento;
-            cbSexo.SelectedIndex = Cedula.IdSexo;
-            cbTipoSangre.SelectedIndex = Cedula.IdTipoSangre;
-            cbOcupacion.SelectedIndex = Cedula.IdOcupacion;
-            cbOcupacion.SelectedIndex = Cedula.IdOcupacion;
-            cbMunicipio.SelectedIndex = Cedula.IdMunicipio;
-            cbSector.SelectedIndex = Cedula.IdSector;
+            cbNacionalidad.SelectedIndex = Cedula.IdNacional - 1;
+            cbEstadoCivil.SelectedIndex = Cedula.IdEstadoCivil - 1;
+            cbLugarNacimiento.SelectedIndex = Cedula.IdLugarNacimiento - 1;
+            cbSexo.SelectedIndex = Cedula.IdSexo - 1;
+            cbTipoSangre.SelectedIndex = Cedula.IdTipoSangre - 1;
+            cbOcupacion.SelectedIndex = Cedula.IdOcupacion - 1;
+            cbOcupacion.SelectedIndex = Cedula.IdOcupacion - 1;
+            cbMunicipio.SelectedIndex = Cedula.IdMunicipio - 1;
+            LoadCbSector();
+            cbSector.SelectedIndex = Cedula.IdSector -1;
+            LoadCbColegio();
+            cbColegio.SelectedIndex = Cedula.IdColegioElectoral - 1;
 
         }
 
@@ -100,15 +90,15 @@ namespace DS1.Mantenimientos.CedulaMantenimiento
                 FechaNacimiento = dtFechaNacimiento.Value,
                 FechaExpiracion = FechaExpiracion,
                 DireccionResidencia = tbDireccionResidencia.Text,
-                IdColegioElectoral = cbColegio.SelectedIndex,
-                IdNacional = cbNacionalidad.SelectedIndex,
-                IdLugarNacimiento = cbLugarNacimiento.SelectedIndex,
-                IdSexo = cbSexo.SelectedIndex,
-                IdTipoSangre = cbTipoSangre.SelectedIndex,
-                IdOcupacion = cbOcupacion.SelectedIndex,
-                IdEstadoCivil = cbOcupacion.SelectedIndex,
-                IdMunicipio = cbMunicipio.SelectedIndex,
-                IdSector = cbSector.SelectedIndex,
+                IdNacional = cbNacionalidad.SelectedIndex+1,
+                IdLugarNacimiento = cbLugarNacimiento.SelectedIndex+1,
+                IdSexo = cbSexo.SelectedIndex+1,
+                IdTipoSangre = cbTipoSangre.SelectedIndex+1,
+                IdOcupacion = cbOcupacion.SelectedIndex+1,
+                IdEstadoCivil = cbOcupacion.SelectedIndex+1,
+                IdMunicipio = cbMunicipio.SelectedIndex+1,
+                IdSector = Entities.Sectors.FirstOrDefault(c => c.Descripcion == cbSector.SelectedText).Id,
+                IdColegioElectoral = Entities.Colegios.FirstOrDefault(c=>c.Nombre==cbColegio.SelectedText).Id,
                 Estado = (int)EstadosEnum.Activo,
                 FechaCreacion = DateTime.UtcNow.AddMinutes(-240)
             };
@@ -227,6 +217,23 @@ namespace DS1.Mantenimientos.CedulaMantenimiento
 
             return result;
         }
+
+        void LoadCbSector()
+        {
+            var cbSectorData = Entities.Sectors.Where(n => n.Estado == (int)EstadosEnum.Activo && n.IdMunicipio == cbMunicipio.SelectedIndex + 1).Select(n => new { id = n.Id, text = n.Descripcion }).ToList();
+            //necesita sacarlo de municipio 
+            cbSectorData.ForEach(data =>
+            cbSector.Items.Insert(data.id - 1, data.text)
+            );
+        }
+        void LoadCbColegio()
+        {
+            var cbColegioData = Entities.Colegios.Where(n => n.Estado == (int)EstadosEnum.Activo && n.IdMunicipio == cbMunicipio.SelectedIndex + 1 && n.IdSector == cbSector.SelectedIndex + 1).Select(n => new { id = n.Id, text = n.Nombre }).ToList();
+            //necesita sacarlo de municipio y sector
+            cbColegioData.ForEach(data =>
+            cbColegio.Items.Insert(data.id - 1, data.text));
+        }
+
         private void addButton_Click(object sender, EventArgs e)
         {
             var rnd = new Random();
@@ -263,15 +270,15 @@ namespace DS1.Mantenimientos.CedulaMantenimiento
         {
             this.Close();
         }
-
+        
         private void cbMunicipio_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            LoadComboBox();
+            LoadCbSector();
         }
 
         private void cbSector_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            LoadComboBox();
+            LoadCbColegio();
         }
     }
 }
